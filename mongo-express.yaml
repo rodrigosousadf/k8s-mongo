@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-express
+  labels:
+    app: mongo-express
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-express
+  template:
+    metadata:
+      labels:
+        app: mongo-express
+    spec:
+      containers:
+      - name: mongo-express
+        image: mongo-express:latest # Substitua por uma versão específica, se possível
+        ports:
+        - containerPort: 8081
+        resources:
+          limits:
+            memory: "256Mi" # Defina limites apropriados
+            cpu: "0.5"
+          requests:
+            memory: "128Mi" # Defina solicitações apropriadas
+            cpu: "0.1"
+        env:
+        - name: ME_CONFIG_MONGODB_ADMINUSERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: mongo-root-username
+        - name: ME_CONFIG_MONGODB_ADMINPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: mongo-root-password
+        - name: ME_CONFIG_MONGODB_SERVER
+          valueFrom:
+            configMapKeyRef:
+              name: mongodb-configmap
+              key: database_url
+        - name: ME_CONFIG_BASICAUTH_USERNAME
+          value: rodrigo
+        - name: ME_CONFIG_BASICAUTH_PASSWORD
+          value: Rodrigo0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-express-service
+spec:
+  selector:
+    app: mongo-express
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8081
