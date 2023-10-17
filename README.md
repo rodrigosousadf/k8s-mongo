@@ -1,6 +1,3 @@
-Peço desculpas pela confusão na numeração. Vou corrigir isso para tornar o README mais claro:
-
-```markdown
 # k8s-mongo
 
 Este repositório fornece recursos e informações para implantar o MongoDB no Kubernetes (K8s). O Kubernetes é uma plataforma de código aberto para automação, escalonamento e gerenciamento de aplicativos em contêiner. O MongoDB é um banco de dados NoSQL altamente flexível.
