@@ -8,7 +8,6 @@ Este repositório fornece recursos e informações para implantar o MongoDB no K
 2. [Pré-Requisitos](#pré-requisitos)
 3. [Instruções de Implantação](#instruções-de-implantação)
 4. [Contribuição](#contribuição)
-5. [Licença](#licença)
 
 ## 1. Introdução
 
@@ -56,15 +55,3 @@ Siga estas etapas para implantar o MongoDB no seu cluster Kubernetes:
 
 Adoraríamos receber sua contribuição para este projeto. Sinta-se à vontade para criar issues, enviar solicitações de pull ou fornecer feedback. Juntos, podemos melhorar e expandir este recurso.
 
-## 5. Licença
-
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
-```
-
-Espero que esta formatação seja mais clara. Certifique-se de personalizar o README conforme as necessidades do seu projeto.
-
-Contribuição
-Sinta-se à vontade para contribuir para este projeto. Você pode fazer isso criando issues, enviando solicitações de pull ou fornecendo feedback. Suas contribuições são bem-vindas!
-
-Licença
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para obter detalhes.
